@@ -1,15 +1,7 @@
-#colour-box {
-    background-color: #f00;
-    width: 100px;
-    height: 100px;
-
-    transition: background-color 0.3s ease;
-}
-
-#changeButton:hover {
-    background-color: #00f;
-    border: 1px solid #00f;
-    border-radius: 2px;
-    color: #fff;
-    cursor: pointer;
+table, th, td {
+    width: 30%;
+    margin: auto;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    text-align: center;
 }
