@@ -1,323 +1,118 @@
-let i = 10;
-document.write(i.toString(), "<br>")
+function main() {
+    let isString;
+    isString = "Hello, World!";
+    document.write(`${isString}'s type is ${typeof isString}`, "<br>");
+    document.write(`${isString}'s length is ${isString.length}`, "<br>")
+    document.write(isString.toString().toUpperCase(), "<br>")
+    document.write(isString.toString().toLowerCase(), "<br>")
+    document.write(isString.charAt(1), "<br>")
+    document.write(isString.substring(2, 4), "<br>")
+    document.write(isString.replace("Hello", "Hi"), "<br>")
+    document.write(isString.indexOf("World").toString(), "<br>")
 
-let s = "Hello, World!";
-document.write(s, "<br>")
+    const isInt = 10;
+    document.write(`${isInt}'s type is ${typeof isInt}`, "<br>");
 
-let f = 3.14;
-document.write(f.toString(), "<br>")
+    const isFloat = 3.14;
+    document.write(`${isFloat}'s type is ${typeof isFloat}`, "<br>");
 
-let b = true;
-document.write(b.toString(), "<br>")
+    const isBool = true;
+    document.write(`${isBool}'s type is ${typeof isBool}`, "<br>");
 
-let u;
-document.write(u, "<br>")
+    const isUndefined = undefined;
+    document.write(`${isUndefined}'s type is ${typeof isUndefined}`, "<br>");
 
-let n = null;
-document.write(n, "<br>")
+    const isNull = null;
+    document.write(`${isNull}'s type is ${isNull}`, "<br>");
 
-if (i < f) {
-    document.write("float", "<br>")
-} else {
-    document.write("int", "<br>")
-}
+    const food = ["Pizza", "Sushi", "Burger", "Pasta", "Tacos"];
+    document.write(`${food}'s type is ${typeof food}`, "<br>");
+    document.write(food.length.toString(), "<br>");
+    document.write(`${food[0]}'s type is ${typeof food[0]}`, "<br>");
 
-let gender = Math.random() < 0.5 ? 0 : 1;
-switch (gender) {
-    case 0:
-        document.write("Female", "<br>")
-        break;
-    case 1:
-        document.write("Male", "<br>")
-        break;
-    default:
-        document.write("Unknown", "<br>")
-        break;
-}
-
-let sum = 0;
-while (n <= 100) {
-    sum += n;
-    n++;
-}
-document.write(sum, "<br>")
-
-let total = 0;
-let num = 1;
-do {
-    total += num;
-    num++;
-} while (num <= 100)
-document.write(total, "<br>")
-
-let t = 0;
-for (let j = 0; j <= 100; j++) {
-    t += j;
-}
-document.write(total, "<br>")
-
-function addition(a, b) {
-    let sum = a + b;
-    document.write(sum, "<br>")
-    return sum;
-}
-
-addition(1, 2)
-
-function onClick() {
-    alert("Hello, World!");
-}
-
-document.write(s.length.toString(), "<br>")
-
-document.write(b.toString().toUpperCase(), "<br>")
-document.write(b.toString().toLowerCase(), "<br>")
-
-document.write(s.charAt(1), "<br>")
-
-document.write(s.substring(2, 4), "<br>")
-
-document.write(s.replace("Hello", "Hi"), "<br>")
-
-let arr = s.split(" ");
-for (let i = 0; i < arr.length; i++) {
-    document.write(arr[i], "<br>")
-}
-
-document.write(s.indexOf("World").toString(), "<br>")
-
-let food = ["Pizza", "Sushi", "Burger", "Pasta", "Tacos"];
-food.push("Steak");
-document.write(food.join("<br>"), "<br>")
-document.write(food[0], "<br>")
-food[0] = "Salad";
-document.write(food.join("<br>"), "<br>")
-document.write(food.length.toString(), "<br>")
-for (let j = 0; j < food.length; j++) {
-    document.write(food[j], "<br>")
-}
-document.write(food.slice(2, 4).join("<br>"), "<br>")
-food.unshift("Rice", "Beans");
-document.write(food.join("<br>"), "<br>")
-food.shift()
-document.write(food.join("<br>"), "<br>")
-food.pop()
-document.write(food.join("<br>"), "<br>")
-food.reverse()
-document.write(food.join("<br>"), "<br>")
-document.write(food.join("-"), "<br>")
-
-let date = new Date();
-let day = date.getDate();
-let week = date.getDay()
-let month = date.getMonth() + 1
-let year = date.getFullYear()
-let hour = date.getHours()
-let minute = date.getMinutes()
-let second = date.getSeconds()
-document.write(
-    year.toString() + " " + month.toString() + " " + day.toString() + " " +
-    hour.toString() + ":" + minute.toString() + ":" + second.toString(),
-    "<br>"
-)
-switch (week) {
-    case 0:
-        document.write("Sunday", "<br>");
-        break;
-    case 1:
-        document.write("Monday", "<br>");
-        break;
-    case 2:
-        document.write("Tuesday", "<br>");
-        break;
-    case 3:
-        document.write("Wednesday", "<br>");
-        break;
-    case 4:
-        document.write("Thursday", "<br>");
-        break;
-    case 5:
-        document.write("Friday", "<br>");
-        break;
-    case 6:
-        document.write("Saturday", "<br>");
-        break;
-    default:
-        break;
-}
-
-const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-document.write(weekdays[week], "<br>")
-
-document.write(Math.PI.toString(), "<br>")
-
-const nums = [18, 25, 17, 61, 33]
-let max = Math.max(...nums)
-document.write(max.toString(), "<br>")
-let min = Math.min(...nums)
-document.write(min.toString(), "<br>")
-
-document.write(Math.floor(Math.PI).toString(), "<br>")
-document.write(Math.ceil(Math.PI).toString(), "<br>")
-document.write(Math.round(Math.PI).toString(), "<br>")
-
-function randomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-function randomFloat(min, max) {
-    return Math.random() * (max - min) + min;
-}
-
-function randomOption(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-}
-
-const oDiv = document.getElementById("main");
-const oStrong = document.createElement("strong");
-const oText = document.createTextNode("Hello, World!");
-oStrong.appendChild(oText);
-oDiv.appendChild(oStrong);
-
-function inserter() {
-    const oList = document.getElementById("list")
-    const oText = document.getElementById("txt")
-
-    const textNode = document.createTextNode(oText.value)
-
-    const oItem = document.createElement("li")
-    oItem.appendChild(textNode)
-    // oList.appendChild(oItem)
-    oList.insertBefore(oItem, oList.firstElementChild)
-}
-
-function removeFirst() {
-    const oList = document.getElementById("list")
-    // remove the first item
-    oList.removeChild(oList.firstElementChild)
-}
-
-function removeLast() {
-    const oList = document.getElementById("list")
-    // remove the last item
-    oList.removeChild(oList.lastElementChild)
-}
-
-function copy() {
-    const oLists = document.getElementById("lists")
-    const oList = document.getElementById("list")
-    // copy the list
-    // deep copy
-    oLists.appendChild(oList.cloneNode(true))
-}
-
-const oDivButton = document.getElementById("button4list")
-
-const oInsert = document.createElement("input");
-oInsert.type = "button";
-oInsert.value = "Insert";
-oInsert.onclick = inserter;
-oDivButton.appendChild(oInsert);
-
-const oRemoveFirst = document.createElement("input");
-oRemoveFirst.type = "button";
-oRemoveFirst.value = "Remove First";
-oRemoveFirst.onclick = removeFirst;
-oDivButton.appendChild(oRemoveFirst);
-
-const oRemoveLast = document.createElement("input");
-oRemoveLast.type = "button";
-oRemoveLast.value = "Remove Last";
-oRemoveLast.onclick = removeLast;
-oDivButton.appendChild(oRemoveLast);
-
-const oCopy = document.createElement("input");
-oCopy.type = "button";
-oCopy.value = "Copy";
-oCopy.onclick = copy;
-oDivButton.appendChild(oCopy);
-
-function replace() {
-    const oLabel = document.getElementById("replace-label")
-    const oInput = document.getElementById("replace-input")
-
-    oLabel.textContent = oInput.value
-    oInput.value = ""
-}
-
-const oReplaceButtons = document.getElementById("button4replace")
-const oReplace = document.createElement("input");
-oReplace.type = "button";
-oReplace.value = "Replace";
-oReplace.onclick = replace;
-oReplaceButtons.appendChild(oReplace);
-
-const oLength = document.createElement("span");
-oLength.id = "input-length";
-oLength.textContent = "0";
-oReplaceButtons.appendChild(oLength);
-
-const oInput = document.getElementById("replace-input")
-
-function calLength() {
-    oLength.textContent = oInput.value.length.toString()
-}
-
-oInput.onkeyup = calLength;
-
-//
-const oColourBox = document.getElementById("colour-box")
-
-function change() {
-    // oColourBox.style.backgroundColor = "#174689"
-    oColourBox.style.cssText = "background-color: #174689; width: 200px; height: 50px;"
-    alert(getComputedStyle(oColourBox).backgroundColor)
-}
-
-function moveIn() {
-    oColourBox.style.backgroundColor = "#174689"
-}
-
-function moveOut() {
-    oColourBox.style.backgroundColor = "#f00"
-}
-
-oColourBox.onmouseover = moveIn;
-oColourBox.onmouseout = moveOut;
-
-const oColour = document.getElementById("button4colour")
-const oChange = document.createElement("input");
-oChange.type = "button";
-oChange.value = "Change";
-oChange.id = "changeButton";
-oChange.onclick = change;
-oColour.appendChild(oChange);
-
-//
-const oEvent = document.getElementById("event");
-const oEveLabel = document.createElement("label");
-oEveLabel.textContent = "You pressed the key: ";
-oEvent.appendChild(oEveLabel);
-
-const oEveSpan = document.createElement("span");
-oEveSpan.id = "key-result";
-oEveSpan.innerText = "None";
-oEvent.appendChild(oEveSpan);
-
-function press(e) {
-    if (e.keyCode === 38 || e.keyCode === 87) {
-        oEveSpan.innerText = "Up";
-    } else if (e.keyCode === 39 || e.keyCode === 68) {
-        oEveSpan.innerText = "Right";
-    } else if (e.keyCode === 40 || e.keyCode === 83) {
-        oEveSpan.innerText = "Down";
-    } else if (e.keyCode === 37 || e.keyCode === 65) {
-        oEveSpan.innerText = "Left";
-    } else {
-        oEveSpan.innerText = `KeyCode: ${e.keyCode}`;
+    food.push("Steak");
+    document.write(food.join(" - "), "<br>")
+    document.write(food[0], "<br>")
+    food[0] = "Salad";
+    document.write(food.join(" * "), "<br>")
+    document.write(food.length.toString(), "<br>")
+    for (let j = 0; j < food.length; j++) {
+        document.write(food[j], " | ")
     }
+    document.write(food.slice(2, 4).join("<br>"), "<br>")
+    food.unshift("Rice", "Beans");
+    document.write(food.join(" - "), "<br>")
+    food.shift()
+    document.write(food.join(" * "), "<br>")
+    food.pop()
+    document.write(food.join(" + "), "<br>")
+    food.splice(0, 3)
+    document.write(food.join(" / "), "<br>")
+    food.reverse()
+    document.write(food.join(" & "), "<br>")
+
+    const PI = Math.PI;
+    document.write(`${PI}'s type is ${typeof PI}`, "<br>");
+
+    const r = 2;
+    const area = Math.pow(r, 2) * PI;
+    document.write(`${area.toFixed(2)}'s type is ${typeof r}`, "<br>");
+
+    const year = Math.floor(Math.random() * 2025);
+    if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+        document.write(`The year of ${year} is Leap Year.`, "<br>");
+    } else {
+        document.write(`The year of ${year} is Ordinary Year.`, "<br>");
+    }
+
+    const score = Math.floor(Math.random() * 101);
+    if (score >= 85) {
+        document.write(`The ${score} is A.`, "<br>");
+    } else if (score >= 70) {
+        document.write(`The ${score} is B`, "<br>");
+    } else if (score >= 60) {
+        document.write(`The ${score} is C`, "<br>");
+    } else {
+        document.write(`The ${score} is F`, "<br>");
+    }
+
+    const gender = Math.random() < 0.5 ? 0 : 1;
+    switch (gender) {
+        case 0:
+            document.write("Female", "<br>")
+            break;
+        case 1:
+            document.write("Male", "<br>")
+            break;
+        default:
+            document.write("Unknown", "<br>")
+            break;
+    }
+
+    const time = Math.floor(Math.random() * 24);
+    time < 10 ? document.write("0" + time.toString(), "<br>") : document.write(time.toString(), "<br>");
+
+    let round = 0;
+    let sum = 0;
+    while (round <= 100) {
+        sum += round;
+        round++;
+    }
+    document.write(sum.toString(), "<br>");
+
+    round = 0;
+    sum = 0;
+    do {
+        sum += round;
+        round++;
+    } while (round <= 100)
+    document.write(sum.toString(), "<br>")
+
+    sum = 0;
+    for (let i = 0; i <= 100; i++) {
+        sum += i;
+    }
+    document.write(sum.toString(), "<br>")
 }
 
-window.addEventListener("keydown", press, false);
-
-document.write(window.navigator.userAgent)
+main()
